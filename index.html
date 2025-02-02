@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nature-Inspired Navigation Menu</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Lato', 'Roboto', Helvetica, sans-serif;
+      background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+      color: #3e3e3e;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Decorative Elements */
+    .decorative-square {
+      position: fixed;
+      top: 20%;
+      left: 10%;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      transform: rotate(45deg);
+      z-index: -1;
+      opacity: 0.2;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .decorative-circle {
+      position: fixed;
+      bottom: 10%;
+      right: 10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #FFD700, #FFA500);
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.2;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Navigation Bar */
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    #navbar .logo {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #4CAF50;
+      text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+
+    #navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    #navbar ul li {
+      margin: 0 15px;
+    }
+
+    #navbar ul li a {
+      font-family: 'Lato', sans-serif;
+      text-decoration: none;
+      color: #3e3e3e;
+      font-size: 18px;
+      padding: 10px 20px;
+      display: block;
+      transition: color 0.3s ease, background 0.3s ease;
+    }
+
+    #navbar ul li a:hover {
+      color: #45a049;
+      background: rgba(76, 175, 80, 0.1);
+      border-radius: 5px;
+    }
+
+    /* Content Sections */
+    .content {
+      padding-top: 100px;
+    }
+
+    section {
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section h1, section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #2c572c;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    section p {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorative Elements -->
+  <div class="decorative-square"></div>
+  <div class="decorative-circle"></div>
+
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <div class="logo">Nature UI</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content Sections -->
+  <div class="content">
+    <section id="home">
+      <h1>Welcome to Nature</h1>
+      <p>Experience harmony between design and nature.</p>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Creating sustainable digital experiences.</p>
+    </section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>Eco-friendly solutions for modern needs.</p>
+    </section>
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <p>Nature-inspired projects that make a difference.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Connect with us to grow naturally.</p>
+    </section>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
